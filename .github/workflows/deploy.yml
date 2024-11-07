@@ -35,6 +35,8 @@ jobs:
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/xiaozhi666666/baikaishui-blog.git
           git checkout --orphan gh-pages
+          git rm -rf .
+          cp -R build/* .
           git add -A
           git commit -am 'Deploy to GitHub Pages'
           git push -f origin gh-pages
