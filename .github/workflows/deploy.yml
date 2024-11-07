@@ -27,11 +27,11 @@ jobs:
 
     - name: Deploy
       env:
-        GH_PAT: ${{ secrets.CD }}
+        GH_PAT: ${{ secrets.cd }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git remote set-url origin https://${{ secrets.CD }}@github.com/xiaozhi666666/baikaishui-blog.git
+        git remote set-url origin https://${{ secrets.cd }}@github.com/xiaozhi666666/baikaishui-blog.git
         git checkout --orphan gh-pages
         git add -A
         git commit -am 'Deploy to GitHub Pages'
