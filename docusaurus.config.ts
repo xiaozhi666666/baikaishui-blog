@@ -7,8 +7,8 @@ const config: Config = {
   title: '白开水的博客',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
-  url: 'https://your-docusaurus.site',
-  baseUrl: '/',
+  url: 'https://github.com/xiaozhi666666',
+  baseUrl: '/baikaishui-blog/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
