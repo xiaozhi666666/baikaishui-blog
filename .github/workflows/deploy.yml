@@ -8,31 +8,33 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '20.x'
-        check-latest: true
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20.x"
+          check-latest: true
 
-    - name: Install dependencies
-      run: yarn install --frozen-lockfile
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
-    - name: Build
-      run: yarn build
+      - name: Build
+        run: yarn build
 
-    - name: Deploy
-      env:
-        GH_PAT: ${{ secrets.GH_PAT }}
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/xiaozhi666666/baikaishui-blog.git
-        git checkout --orphan gh-pages
-        git add -A
-        git commit -am 'Deploy to GitHub Pages'
-        git push -f origin gh-pages
+      - name: Deploy
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/xiaozhi666666/baikaishui-blog.git
+          git checkout --orphan gh-pages
+          git add -A
+          git commit -am 'Deploy to GitHub Pages'
+          git push -f origin gh-pages
