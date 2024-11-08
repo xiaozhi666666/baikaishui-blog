@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbaikaishui_blog=self.webpackChunkbaikaishui_blog||[]).push([[7234],{4052:a=>{a.exports=JSON.parse('{"metadata":{"permalink":"/baikaishui-blog/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

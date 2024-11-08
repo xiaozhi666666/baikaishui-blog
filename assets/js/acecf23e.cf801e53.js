@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbaikaishui_blog=self.webpackChunkbaikaishui_blog||[]).push([[1903],{1912:a=>{a.exports=JSON.parse('{"blogBasePath":"/baikaishui-blog/blog","blogTitle":"Blog","authorsListPath":"/baikaishui-blog/blog/authors"}')}}]);
