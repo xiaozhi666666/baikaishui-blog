@@ -76,7 +76,7 @@ const config: Config = {
         },
         {to: '/blog', label: '博客', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/xiaozhi666666/baikaishui-blog',
           label: 'GitHub',
           position: 'right',
         },
