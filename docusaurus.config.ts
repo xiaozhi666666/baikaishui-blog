@@ -5,8 +5,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: '白开水的博客',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  tagline: '白开水的博客',
+  favicon: 'img/avatar.png',
   url: 'https://xiaozhi666666.github.io',
   baseUrl: '/baikaishui-blog/',
 
@@ -132,6 +132,7 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+  plugins: ["docusaurus-plugin-less"],
 };
 
 export default config;
