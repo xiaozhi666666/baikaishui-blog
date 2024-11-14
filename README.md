@@ -17,7 +17,8 @@ yarn start
 ```sh
 yarn build
 ```
-此命令将生成静态内容到 build 目录，可以使用任何静态内容托管服务进行部署。
+## 部署
+该项目使用github的workflows进行自动化部署，推送到main分支后，会执行整个ci流程，并部署到gh-pages分支，使用github托管
 
 ## 技术栈
 1. React: 前端库，用于构建用户界面。
