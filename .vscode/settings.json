@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll": "explicit"
+  },
+  // 永远读取本地的配置文件
+  "stylelint.config": null,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false
+}

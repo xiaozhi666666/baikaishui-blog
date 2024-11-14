@@ -1,0 +1,52 @@
+.introduction {
+  display: grid;
+  position: relative;
+  grid-template-columns: 8fr 11fr;
+
+  .introductionCon {
+    position: relative;
+    padding-top: 150px;
+    padding-left: 30px;
+    .introductionConGreet {
+      font-size: 50px;
+      line-height: 80px;
+      font-weight: bold;
+      span {
+        --lighting-size: 300px;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-color: #12affa;
+        background-image: radial-gradient(#d5f1fd, #12affa, #12affa);
+        background-repeat: no-repeat;
+        background-size: var(--lighting-size) var(--lighting-size);
+        color: transparent;
+      }
+    }
+    .introductionConDesc {
+      color: #3d434a;
+      font-weight: 500;
+      margin-top: 24px;
+      line-height: 32px;
+      text-shadow: 0 0 #8c99ab;
+    }
+  }
+  .hero {
+    position: relative;
+    .heroBg {
+      background-image: linear-gradient(
+        to right,
+        rgb(0, 71, 252, 0.81),
+        rgb(150, 255, 244, 0.81)
+      );
+      border-radius: 9999px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      filter: blur(80px);
+      opacity: 0.3;
+      z-index: -1;
+    }
+  }
+}
