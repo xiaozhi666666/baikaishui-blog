@@ -8,5 +8,8 @@
   // 永远读取本地的配置文件
   "stylelint.config": null,
   "editor.tabSize": 2,
-  "editor.insertSpaces": false
+  "editor.insertSpaces": false,
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  }
 }

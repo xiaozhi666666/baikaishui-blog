@@ -1,131 +1,151 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-
+import { themes as prismThemes } from "prism-react-renderer";
+import type { Config } from "@docusaurus/types";
+import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: '白开水的博客',
-  tagline: '白开水的博客',
-  favicon: 'img/avatar.png',
-  url: 'https://xiaozhi666666.github.io',
-  baseUrl: '/baikaishui-blog/',
+  title: "白开水的博客",
+  tagline: "白开水的博客",
+  favicon: "img/avatar.png",
+  url: "https://xiaozhi666666.github.io",
+  baseUrl: "/baikaishui-blog/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: '白开水咕咕', // Usually your repo name.
+  organizationName: "facebook", // Usually your GitHub org/user name.
+  projectName: "白开水咕咕", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       {
         docs: {
-          sidebarPath: './sidebars.ts',
+          sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
           feedOptions: {
-            type: ['rss', 'atom'],
+            type: ["rss", "atom"],
             xslt: true,
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
           // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: "warn",
+          onInlineAuthors: "warn",
+          onUntruncatedBlogPosts: "warn",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: "img/docusaurus-social-card.jpg",
     navbar: {
-      title: '白开水',
+      title: "白开水",
       logo: {
-        alt: '白开水',
-        src: 'img/avatar.png',
+        alt: "白开水",
+        src: "img/avatar.png",
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: '文档',
+          type: "docSidebar",
+          sidebarId: "tutorialSidebar",
+          position: "left",
+          label: "文档",
         },
-        {to: '/blog', label: '博客', position: 'left'},
+        { to: "/blog", label: "博客", position: "left" },
         {
-          href: 'https://github.com/xiaozhi666666/baikaishui-blog',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/xiaozhi666666/baikaishui-blog",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "学习",
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: "文档",
+              to: "/docs/intro",
+            },
+            {
+              label: "博客",
+              to: "/blog",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "工具网站",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: "quicktype",
+              href: "https://app.quicktype.io/",
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: "excalidraw",
+              href: "https://excalidraw.com/",
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: "时间戳转换",
+              href: "https://tool.chinaz.com/tools/unixtime.aspx",
+            },
+            {
+              label: "json在线工具",
+              href: "https://www.sojson.com/",
+            },
+            {
+              label: "SVG转DataURL",
+              href: "https://www.fengjs.com/tools/svg2path.html/",
             },
           ],
         },
         {
-          title: 'More',
+          title: "一些有趣的网站",
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              label: "特殊符号",
+              href: "https://cn.piliapp.com/symbol/",
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: "新闻热榜",
+              href: "https://tophub.today/",
+            },
+          ],
+        },
+        {
+          title: "其他",
+          items: [
+            {
+              label: "GitHub",
+              href: "https://github.com/xiaozhi666666/baikaishui-blog",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © 2024-${new Date().getFullYear()} baikaishui-blog.`,
     },
     prism: {
       theme: prismThemes.github,
