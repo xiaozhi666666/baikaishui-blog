@@ -4,22 +4,16 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
   title: "白开水的博客",
-  tagline: "白开水的博客",
   favicon: "img/avatar.png",
   url: "https://xiaozhi666666.github.io",
   baseUrl: "/baikaishui-blog/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "白开水咕咕", // Usually your repo name.
+  organizationName: "facebook",
+  projectName: "白开水咕咕",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
