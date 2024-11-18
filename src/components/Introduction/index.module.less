@@ -28,10 +28,32 @@
       margin-top: 24px;
       line-height: 32px;
       text-shadow: 0 0 #8c99ab;
+      margin-bottom: 30px;
+    }
+    .introductionConLink {
+      font-size: 18px;
+      width: 130px;
+      height: 50px;
+      border: 2px solid #c0c0c0;
+      border-radius: 20px;
+      line-height: 46px;
+      text-align: center;
+      color: #12affa;
+      font-weight: bold;
+      a {
+        text-decoration: none;
+      }
     }
   }
   .hero {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      width: 650px;
+    }
+    margin: 12px 0;
     .heroBg {
       background-image: linear-gradient(
         to right,
@@ -48,5 +70,11 @@
       opacity: 0.3;
       z-index: -1;
     }
+  }
+}
+@media (max-width: 1000px) {
+  .introduction {
+    display: flex;
+    flex-wrap: wrap;
   }
 }

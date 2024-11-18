@@ -62,8 +62,7 @@ const config: Config = {
       },
       items: [
         {
-          type: "docSidebar",
-          sidebarId: "tutorialSidebar",
+          to: "docs/skill",
           position: "left",
           label: "文档",
         },
@@ -73,6 +72,7 @@ const config: Config = {
           label: "GitHub",
           position: "right",
         },
+        { label: "关于", position: "right", to: "about" },
       ],
     },
     footer: {
@@ -88,6 +88,19 @@ const config: Config = {
             {
               label: "博客",
               to: "/blog",
+            },
+          ],
+        },
+        {
+          title: "一些有趣的网站",
+          items: [
+            {
+              label: "特殊符号",
+              href: "https://cn.piliapp.com/symbol/",
+            },
+            {
+              label: "新闻热榜",
+              href: "https://tophub.today/",
             },
           ],
         },
@@ -116,19 +129,7 @@ const config: Config = {
             },
           ],
         },
-        {
-          title: "一些有趣的网站",
-          items: [
-            {
-              label: "特殊符号",
-              href: "https://cn.piliapp.com/symbol/",
-            },
-            {
-              label: "新闻热榜",
-              href: "https://tophub.today/",
-            },
-          ],
-        },
+
         {
           title: "其他",
           items: [
