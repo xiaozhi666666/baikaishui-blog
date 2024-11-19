@@ -25,10 +25,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: {
           showReadingTime: true,
@@ -36,11 +32,6 @@ const config: Config = {
             type: ["rss", "atom"],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-          // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
           onUntruncatedBlogPosts: "warn",
@@ -48,12 +39,24 @@ const config: Config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
+        sitemap: {
+          priority: 0.5,
+        },
+        gtag: {
+          trackingID: "G-S4SD5NXWXF",
+          anonymizeIP: true,
+        },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
     image: "img/docusaurus-social-card.jpg",
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
+    },
     navbar: {
       title: "白开水",
       logo: {
@@ -66,7 +69,7 @@ const config: Config = {
           position: "left",
           label: "文档",
         },
-        { to: "/blog", label: "博客", position: "left" },
+        // { to: "/blog", label: "博客", position: "left" },
         {
           href: "https://github.com/xiaozhi666666/baikaishui-blog",
           label: "GitHub",
@@ -83,12 +86,16 @@ const config: Config = {
           items: [
             {
               label: "文档",
-              to: "/docs/intro",
+              to: "/docs/skill",
             },
             {
-              label: "博客",
-              to: "/blog",
+              label: "掘金",
+              to: "https://juejin.cn/",
             },
+            // {
+            //   label: "博客",
+            //   to: "/blog",
+            // },
           ],
         },
         {
