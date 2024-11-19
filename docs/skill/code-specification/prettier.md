@@ -2,31 +2,52 @@
 id: prettier
 slug: /prettier
 title: prettier
-authors: kuizuo
-keywords: ['code-specification', 'prettier']
+authors: baikaishui
+keywords: ["code-specification", "prettier"]
 ---
 
-Prettier 是一个固执己见的代码格式化程序。
+:::tip
+Prettier 是一个统一代码格式风格的工具， Prettier 更注重格式规则，而 ESLint 更注重质量规则
+但是 ESlint 中也有一些格式规则，就会出现神仙打架的情况，eslint-config-prettier 就是为了解决这个问题的，就是把一些冲突的规则关了 😓
+:::
 
-[Install · Prettier](https://prettier.io/docs/en/install.html)
+### 安装
 
-## 集成在 ESlint 中
-
-ESlint 与 Prettier 可能会冲突，故需做如下设置：
-
-```js
-//1. 安装 eslint-config-prettier 插件
-npm i -D eslint-config-prettier
-//2. 在 eslint 的配置文件中写入以下内容
-extends: ['plugin:prettier/recommended'], // 避免与 prettier 冲突
+```bash
+yarn add prettier@3.2.5 --save-dev
 ```
 
-## prettier 与 eslint 如何选择
+### 运行以下指令检测是否有重复的格式规则集在生效
 
-prettier 只需要按照一个 vscode 插件，几乎没有任何门槛，按下 Ctrl + Alt + F 就可以美化你的代码。而 eslint 需要配合代码编辑器与相关规则，通过保存文件或者执行 eslint 命令才能格式化代码。但往往也是因为过少的配置，使 prettier 对代码的约束不如 eslint。
+```bash
+# eslint-config-prettier 7.0 之前的版本
+npx eslint --print-config src/index.ts | npx eslint-config-prettier-check
+# eslint-config-prettier 7.0 之后的版本
+npx eslint-config-prettier src/index.ts
+```
 
-可以看看 Antfu 大佬的博客 [Why I don't use Prettier (antfu.me)](https://antfu.me/posts/why-not-prettier)，阐述了他为何不使用 Prettier。
+### 配置 .prettierrc 文件 （[全部配置](https://prettier.io/docs/en/configuration.html)）
 
-这两个我都有在使用，在临时编写 demo 代码的时候，肯定优先使用 prettier。
+参考配置
 
-但是在实际项目中，如果不使用 eslint 的话，每次保存代码都需要手动格式化，还是比较繁琐的。
+```javascript
+{
+  // 使用单引号代替双引号
+  "singleQuote": true,
+  // 在对象和数组的最后一个元素后面添加逗号，选择'es5'以支持所有JavaScript环境
+  "trailingComma": "es5",
+  // 每行打印的最大宽度设置为100个字符
+  "printWidth": 100,
+  // 配置文件覆盖设置
+  "overrides": [
+    {
+      // 指定仅应用于.prettierc文件的配置
+      "files": ".prettierrc",
+      "options": {
+        // 使用JSON解析器，因为.prettierc文件是JSON格式
+        "parser": "json"
+      }
+    }
+  ]
+}
+```

@@ -12,5 +12,5 @@
   "[xml]": {
     "editor.defaultFormatter": "redhat.vscode-xml"
   },
-  "cSpell.words": ["baikaishui"]
+  "cSpell.words": ["baikaishui", "stylelint"]
 }

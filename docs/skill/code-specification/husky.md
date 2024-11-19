@@ -1,105 +1,90 @@
 ---
 id: husky
 slug: /husky
-title: husky
-authors: kuizuo
-keywords: ['code-style', 'husky']
+title: husky+lint-staged
+authors: baikaishui
+keywords: ["code-style", "husky"]
 ---
 
-为了确保只有合格的代码才能够提交到仓库。需要配置自动化脚本，确保代码在提交前通过了代码验证工具的检验。
+![Locale Dropdown](./img/gitlen.png)
+:::tip
 
-实际上 git 本身就设计了生命周期钩子来完成这个任务。但是设置过程比较复杂。所以通常情况下会使用 husky 来简化配置。
+1. 如果想要开发者提交符合 ESLint 校验的代码，可以使用 husky 配合 lint-staged 工具实现。两者配合使用可以实现在提交说明时自动
+2. 使用 ESLint 检查 Git 暂存区的代码，一旦存在 💩 一样不符合校验规则的代码，则会放弃提交行为
+3. lint-staged：该工具只会检查放在 Git 暂存区的代码
+4. Husky：使用 Git 的 pre-commit 钩子配合 ESLint 进行代码提交前的代码检查
+5. pre-commit exit 非 0 就会推出本次提交
+   :::
 
-[Husky](https://typicode.github.io/husky/#/)
+### husky prepare 命令
 
-[Git - githooks](https://git-scm.com/docs/githooks)
+```json
+"scripts": {
+  // 执行yarn 或 npm install 会自动执行
+  "prepare": "husky install"
+},
+```
+
+### 安装
 
 ```bash
-pnpm i husky -D
+yarn add husky -D
+# 在项目根目录执行下述命令
+# 会在 pacakge.json 的 scripts 字段中生成 "prepare": "husky install"
+# 上传到远程仓库后，别的开发者同步代码并使用 yarn 安装依赖后，会自动触发 husky install
+yarn prepare
 ```
 
-会创建一个 npm script
+### 在 package.json 中添加以下代码
 
-```
-npm set-script prepare "husky install"
-```
-
-## githooks
-
-### 在 commit 提交前执行 lint 代码校验
-
-执行下方命令，以添加生命周期钩子：
-
-```sql
-npx husky add .husky/pre-commit "pnpm lint"
-```
-
-会创建 `.husky/pre-commit` 文件，其内容如下
-
-```bash title='.husky/pre-commit'
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-pnpm lint
+```json
+"lint-staged": {
+  "*.{ts,tsx,js}": [
+    "eslint --config .eslintrc.js"
+  ],
+  "*.{css,less}": [
+    "stylelint --fix",
+    "stylelint --config .stylelintrc.js"
+  ],
+  "*.{ts,tsx,js,json,html,yml,css,less,md}": [
+    "prettier --write"
+  ]
+},
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged"
+  }
+},
 ```
 
-在每次提交时，都将会执行 lint 脚本来检查代码。
-
-### 在 push 之前通过单元测试
-
-不过更多的做法都是用 **github action** 配置 CI 在虚拟机上跑测试，而不是本地测试。（故这步可省略）
-
-执行下方命令，以添加生命周期钩子：
+### 执行成功后，可以发现，在项目根目录自动生成了 .husky 目录：
 
 ```bash
-npx husky add .husky/pre-push "pnpm test"
+├── .husky
+│   └── -   # _ 目录不会提交到远程仓库，yarn prepare 自动生成
+│       ├── .gitignore
+│       └── husky.sh
+├── .vscode/
+├── node_modules/
 ```
 
-### 提交时自动检查 commit 信息是否符合要求
-
-[commitlint - Lint commit messages](https://commitlint.js.org/#/?id=getting-started)
-
-安装
+### 然后执行下面指令，将 npm run lint 加入到 pre-commit 中
 
 ```bash
-pnpm i -g @commitlint/cli @commitlint/config-conventional
+# 1、如果项目的 node_modules/bin 目录下能够找到 husky 命令，则优先使用命令对应的执行脚本
+# 2、如果本地项目中没有，那么会临时下载 NPM 包到缓存目录中，并将其添加到操作系统的环境变量 PATH 中
+npx husky add .husky/pre-commit "npm run lint"
 ```
 
 ```bash
-echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js
+├── .husky
+│   └── -           # _ 目录不会提交到远程仓库， husky install 自动生成
+│       ├── .gitignore
+│       └── husky.sh
+│   └── pre-commit  # 执行 husky add 之后新增的 Git 钩子 pre-commit
+├── .vscode/
+├── node_modules/
+├── build/
 ```
 
-:::warning 注意
-
-windows 系统请勿使用上行命令，否则会导致编码不是 UTF-8。建议直接复制文本内容到 `commitlint.config.js`
-
-```javascript title='commitlint.config.js'
-module.exports = { extends: ['@commitlint/config-conventional'] }
-```
-
-:::
-
-将 commitlint 脚本添加到 githooks 中， 让每次提交前都验证信息是否正常。
-
-```bash
-npx husky add .husky/commit-msg "npx --no-install commitlint --edit "$1""
-```
-
-其内容如下
-
-```bash title='.husky/commit-msg'
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-npx --no-install commitlint --edit "$1"
-```
-
-测试 commit 提交 `echo 'foo: bar' | commitlint` 将会报错，不符合 commit msg 规范。
-
-```
-echo 'foo: bar' | commitlint
-⧗   input: foo: bar✖   type must be one of [build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test] [type-enum]
-
-✖   found 1 problems, 0 warnings
-ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
-```
+#### 这样在 git commit 时就会执行 npm run lint 操作，来校验代码
