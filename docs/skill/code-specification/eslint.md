@@ -2,56 +2,121 @@
 id: eslint
 slug: /eslint
 title: eslint
-authors: kuizuo
-keywords: ['code-specification', 'eslint']
+authors: baikaishui
+keywords: ["code-specification", "eslint"]
 ---
 
-ESLint 是一种用于识别和报告 ECMAScript/JavaScript 代码中发现的模式的工具，目的是使代码更加一致并避免错误。
+:::tip
 
-[Getting Started with ESLint](https://eslint.org/docs/latest/user-guide/getting-started)
+1. TypeScript 的代码检查工具主要有 TSLint 和 ESLint 两种
+2. 为了在 TypeScript 中复用 ESLint 对于 JavaScript 的生态支持，TypeScript 团队在 2019 年宣布全 面转向 ESLint
+   :::
 
-## eslint-config
+### ESLint 安装
 
-这里强烈推荐 [antfu/eslint-config](https://github.com/antfu/eslint-config)，以及大佬的文章 [Why I don't use Prettier (antfu.me)](https://antfu.me/posts/why-not-prettier)
-
-这份 eslint 配置对于 ts 与 vue 已经足够完整，如果还有其他需求，可自行添加 rule 或使用[overrides](https://eslint.org/docs/latest/user-guide/configuring/configuration-files#how-do-overrides-work)。
-
-## 在 Vscode 中集成 ESlint 插件
-
-- 在 VScode 插件市场安装 [ESLint 插件](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
-- 开启代码保存时自动执行 ESLint 修复功能(全局设置)
-
-```json title='.vscode/settings.json' icon='logos:visual-studio-code'
-  "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false
-  },
+```bash
+# ESLint 是开发态的工具，因此使用 --save-dev 进行开发态依赖安装
+# 以eslint@8.0.1为例
+yarn add eslint@8.0.1  @typescript-eslint/parser@7.2.0 @typescript-eslint/eslint-plugin@6.4.0 eslint-plugin-jsx-a11y eslint-config-airbnb eslint-config-prettier@9.1.0  eslint-plugin-compat eslint-plugin-import eslint-plugin-react-hooks -D
 ```
 
-- 工作区示例如下
+### 新建.eslintrc.js 配置文件
 
-```json title='.vscode/settings.json' icon='logos:eslint'
+```js
+module.exports = {
+  // 共享配置：配置 TypeScript 推荐的校验规则
+  extends: ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  // 解析器：将 TypeScript 的 AST 转换成兼容 ESLint 的 AST
+  parser: "@typescript-eslint/parser",
+  // 插件：提供 TypeScript 校验规则的实现
+  plugins: ["@typescript-eslint"],
+  // 层叠配置：停止向上遍历 ESLint 配置文件
+  root: true,
+};
+```
+
+### 新建.eslintignore 文件
+
+```bash
+lib
+node_modules
+.eslintrc.js
+```
+
+### 配置 package.json 命令
+
+```json
+"scripts": {
+  // 新增 ESLint 校验，校验 src 目录下的 TypeScript 源代码
+  // eslint [options] [file|dir|glob]*
+  "lint": "eslint --ext .ts src"
+},
+```
+
+### 共享配置
+
+:::tip
+在开发的过程中根据安装的 ESLint 插件进行规则设置是非常麻烦的
+ESLint 提供了共享配置的功能，可以将.eslintrc.js 发布成一个 npm 包，减轻开发负担
+常用的配置包：eslint-config-standard、eslint-config-airbnb、eslint-config-prettier、eslint-plugin-import、eslint-plugin-react-hooks 等
+:::
+直接在 eslintrc.js 中配置
+
+```js
 {
-  "prettier.enable": false,
-  "editor.formatOnSave": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+  // 类似于插件，可以省略 eslint-config 前缀
+  "extends": ["airbnb",'prettier']
 }
 ```
 
-## 在 WebStorm 中集成 ESLint 插件
+:::caution
+运行指令查看 eslint 是否生效
 
-> 由于 WebStorm 自动集成 ESLint，所以我们无需安装
+```bash
+npx eslint src/index.tsx
+```
 
-- 进入 WebStorm 配置 ESLint 自动修复
+:::
 
-![image-20220701081021965](https://tva1.sinaimg.cn/large/e6c9d24egy1h3r3vxs790j215p0u00vk.jpg)
+### 参考配置
 
-## 注意事项
+> 安装： 以eslint@8.0.1为例
 
-由于 eslint 配置相对繁琐，所以很多时候编辑器的 eslint 可能都没有生效，具体看编辑器下方状态栏或者日志输出查看ESLint状态。如果为警告（黄色感叹号）或者错误（红色），那么ESLint就是没配置好，可能缺少某些依赖文件或是配置文件写错了。
+```bash
+yarn add eslint@8.0.1  @typescript-eslint/parser@7.2.0 @typescript-eslint/eslint-plugin@6.4.0 eslint-plugin-jsx-a11y eslint-config-airbnb eslint-config-prettier@9.1.0  eslint-plugin-compat eslint-plugin-import eslint-plugin-react-hooks -D
+```
 
-![](https://img.kuizuo.cn/image-20221002163239434.png)
+> eslintrc.js
+
+```javascript
+module.exports = {
+  // 指定 ESLint 使用 @typescript-eslint/parser 作为解析器
+  parser: "@typescript-eslint/parser",
+  extends: [
+    "airbnb", // 使用 Airbnb 的 ESLint 配置
+    "prettier", // 主要解决一下prettier 打架的问题
+    "plugin:compat/recommended", // 检查 JavaScript 代码兼容性
+    "eslint:recommended", // 使用 ESLint 的推荐配置，包括一些基本的错误检查
+    "plugin:@typescript-eslint/recommended", //使用 @typescript-eslint 插件的推荐配置，适用于 TypeScript 项目
+    "plugin:import/errors", // import 插件的错误和警告规则，确保模块导入的正确性和最佳实践
+    "plugin:import/warnings", // import 插件的错误和警告规则，确保模块导入的正确性和最佳实践
+    "plugin:react-hooks/recommended", // 确保 React Hooks 的正确使用
+  ],
+  plugins: ["@typescript-eslint"], // 声明项目中使用的 ESLint 插件
+  env: {
+    browser: true, // 项目代码将在浏览器环境中运行
+    node: true, // 项目代码将在 Node.js 环境中运行
+    es6: true, // 项目代码使用 ES6+ 语法
+    mocha: true, // 项目中使用 Mocha 测试框架 好像没啥用
+    jest: true, // 项目中使用 Jest 测试框架
+    jasmine: true, // 项目中使用 Jasmine 测试框架
+  },
+  // 全局变量
+  globals: {
+    APP_TYPE: true,
+    page: true,
+  },
+  // 一些规则的使用，可以关闭和修改一些规则，懂得都懂
+  rules: {},
+};
+```
