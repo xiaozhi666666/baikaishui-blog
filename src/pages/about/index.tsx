@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useMemo } from "react";
+import React, { FC, Fragment, useCallback, useMemo } from "react";
 import Layout from "@theme/Layout";
 import styles from "./less/index.module.less";
 const About: FC = () => {
@@ -65,10 +65,10 @@ const About: FC = () => {
             <h1>你好 👋，我是白开水。</h1>
           </header>
           {myAbout.map((it) => (
-            <>
+            <Fragment key={it.key}>
               <h2>{it.title}</h2>
               <ul>{it.values.map(li)}</ul>
-            </>
+            </Fragment>
           ))}
         </article>
       </main>
