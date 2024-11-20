@@ -27,7 +27,7 @@ const Introduction = () => {
           在这里我会分享一些在我日常开发中遇到的问题，或者在我日常学习中记录的一些笔记，希望我的博客会对你有所帮助!
         </div>
         <div className={styles.introductionConLink}>
-          <a href="">自我介绍</a>
+          <a href="/baikaishui-blog/about">自我介绍</a>
         </div>
       </div>
       <div className={styles.hero}>

@@ -1,7 +1,7 @@
 ---
 id: vscode
 slug: /vscode
-title: vscode插件
+title: vscode配置
 authors: baikaishui
 keywords: ["code-specification", "vscode"]
 ---

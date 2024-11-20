@@ -59,6 +59,7 @@ const config: Config = {
     },
     navbar: {
       title: "白开水",
+      hideOnScroll: true,
       logo: {
         alt: "白开水",
         src: "img/avatar.png",
