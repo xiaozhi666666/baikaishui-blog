@@ -1,6 +1,7 @@
 import React, { FC, Fragment, useCallback, useMemo } from "react";
 import Layout from "@theme/Layout";
 import styles from "./less/index.module.less";
+import Map from "../../components/map";
 const About: FC = () => {
   const myAbout = useMemo(
     () => [
@@ -70,8 +71,12 @@ const About: FC = () => {
               <ul>{it.values.map(li)}</ul>
             </Fragment>
           ))}
+          <h2>下面是我已经去过的地方，期待新的版图</h2>
         </article>
       </main>
+      <div style={{ width: 1000, height: 600, margin: "0 auto 20px" }}>
+        <Map />
+      </div>
     </Layout>
   );
 };
