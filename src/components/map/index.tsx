@@ -8,6 +8,10 @@ const MapComp = () => {
   let map = null;
 
   const initializeMap = async () => {
+    if (typeof window === "undefined") {
+      console.warn("当前环境不支持 window 对象，无法初始化地图。");
+      return;
+    }
     (window as any)._AMapSecurityConfig = { securityJsCode: YOUR_SAFE_KEY };
 
     try {
