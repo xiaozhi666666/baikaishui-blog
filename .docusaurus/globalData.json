@@ -1,0 +1,82 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/baikaishui-blog/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/baikaishui-blog/docs",
+          "mainDocId": "skill/introduction",
+          "docs": [
+            {
+              "id": "skill/code-specification/code-specification-guides",
+              "path": "/baikaishui-blog/docs/code-specification",
+              "sidebar": "skill"
+            },
+            {
+              "id": "skill/code-specification/eslint",
+              "path": "/baikaishui-blog/docs/eslint",
+              "sidebar": "skill"
+            },
+            {
+              "id": "skill/code-specification/husky",
+              "path": "/baikaishui-blog/docs/husky",
+              "sidebar": "skill"
+            },
+            {
+              "id": "skill/code-specification/prettier",
+              "path": "/baikaishui-blog/docs/prettier",
+              "sidebar": "skill"
+            },
+            {
+              "id": "skill/code-specification/stylelint",
+              "path": "/baikaishui-blog/docs/stylelint",
+              "sidebar": "skill"
+            },
+            {
+              "id": "skill/code-specification/vscode",
+              "path": "/baikaishui-blog/docs/vscode",
+              "sidebar": "skill"
+            },
+            {
+              "id": "skill/introduction",
+              "path": "/baikaishui-blog/docs/skill",
+              "sidebar": "skill"
+            },
+            {
+              "id": "skill/webpack/source-code",
+              "path": "/baikaishui-blog/docs/source-code",
+              "sidebar": "skill"
+            },
+            {
+              "id": "skill/webpack/webpack-guides",
+              "path": "/baikaishui-blog/docs/webpack",
+              "sidebar": "skill"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "skill": {
+              "link": {
+                "path": "/baikaishui-blog/docs/skill",
+                "label": "skill/introduction"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  },
+  "docusaurus-plugin-google-gtag": {
+    "default": {
+      "trackingID": [
+        "G-S4SD5NXWXF"
+      ],
+      "anonymizeIP": true,
+      "id": "default"
+    }
+  }
+}
