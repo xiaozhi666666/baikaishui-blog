@@ -1,0 +1,34 @@
+---
+id: webpack-guides
+slug: /webpack
+title: webpack
+authors: baikaishui
+keywords: ["code-specification"]
+---
+
+:::tip
+本质上，webpack 是一个用于现代 JavaScript 应用程序的 静态模块打包工具。当 webpack 处理应用程序时，它会在内部从一个或多个入口点构建一个 依赖图(dependency graph)，然后将你项目中所需的每一个模块组合成一个或多个 bundles，它们均为静态资源，用于展示你的内容。
+:::
+
+## 一些相关的资料
+
+### 目前主流的一些打包工具
+
+- rollup
+- percel 快速测试 不是很好使
+- gulp task 小的 node
+- esbuilt
+- webpack -> swc
+- vite -> esbuild(swc)
+
+### webpack-module-Federation(模块联邦)
+
+<div style={{ backgroundColor: "#FBDE28", width: "fit-content" }}>
+  **多模块独立构建，形成一个项目（微前端）**
+</div>
+
+### 在安装 webpack 时如果少装了一个 webpack-cli 他就会帮你装，他就会用命令行帮你装，那么他怎么知道是用 yarn，npm，还是用 pnpm 呢 ？
+
+<div style={{ backgroundColor: "#FBDE28", width: "fit-content" }}>
+  **判断有没有 yarn.lock 有就 yarn，有 pnpm-lock.yaml 就用 pnpm，否则就用 npm**
+</div>

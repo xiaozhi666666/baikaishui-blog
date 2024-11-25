@@ -18,6 +18,15 @@ const sidebars: SidebarsConfig = {
         "skill/code-specification/husky",
       ],
     },
+    {
+      label: "webpack",
+      type: "category",
+      link: {
+        type: "doc",
+        id: "skill/webpack/webpack-guides",
+      },
+      items: ["skill/webpack/source-code"],
+    },
   ],
 };
 
