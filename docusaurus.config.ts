@@ -71,7 +71,7 @@ const config: Config = {
           position: "left",
           label: "文档",
         },
-        { to: "/demo", label: "Demo", position: "right" },
+        { to: "demo", label: "Demo", position: "right" },
         {
           href: "https://github.com/xiaozhi666666/baikaishui-blog",
           label: "GitHub",
