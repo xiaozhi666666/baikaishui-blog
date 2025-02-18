@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import DemoLayout from "../components/DemoLayout";
+import DemoLayout from "../../../components/Demo/DemoLayout";
 
 interface IAircraftProps {}
 

@@ -1,4 +1,4 @@
-import { IDemoItem } from "../type";
+import { IDemoItem } from "../../type/demo";
 
 const demoList: IDemoItem[] = [
   {

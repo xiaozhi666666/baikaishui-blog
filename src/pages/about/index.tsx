@@ -1,7 +1,7 @@
 import React, { FC, Fragment, useCallback, useMemo } from "react";
 import Layout from "@theme/Layout";
 import styles from "./less/index.module.less";
-import Map from "../../components/map";
+import Map from "../../components/Map";
 const About: FC = () => {
   const myAbout = useMemo(
     () => [

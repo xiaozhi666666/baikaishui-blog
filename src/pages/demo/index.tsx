@@ -1,6 +1,6 @@
 import React, { FC, useMemo, useState } from "react";
 import Layout from "@theme/Layout";
-import router from "./router";
+import router from "../../routers/demo";
 import styles from "./less/index.module.less";
 import Link from "@docusaurus/Link";
 const Demo: FC = () => {

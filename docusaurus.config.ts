@@ -77,7 +77,7 @@ const config: Config = {
           label: "GitHub",
           position: "right",
         },
-        { label: "关于", position: "right", to: "about" },
+        { label: "关于", position: "right", to: "/about" },
       ],
     },
     footer: {
