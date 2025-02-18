@@ -1,0 +1,28 @@
+{
+  "id": "skill/webpack/source-code",
+  "title": "webpack源码",
+  "description": "webpack 引以为傲的几个东西，都是抄的，哈哈哈",
+  "source": "@site/docs/skill/webpack/webpack源码.md",
+  "sourceDirName": "skill/webpack",
+  "slug": "/source-code",
+  "permalink": "/baikaishui-blog/docs/source-code",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "source-code",
+    "slug": "/source-code",
+    "title": "webpack源码",
+    "authors": "baikaishui",
+    "keywords": [
+      "webpack",
+      "source-code"
+    ]
+  },
+  "sidebar": "skill",
+  "previous": {
+    "title": "webpack",
+    "permalink": "/baikaishui-blog/docs/webpack"
+  }
+}

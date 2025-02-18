@@ -1,0 +1,32 @@
+{
+  "id": "skill/code-specification/prettier",
+  "title": "prettier",
+  "description": "Prettier 是一个统一代码格式风格的工具， Prettier 更注重格式规则，而 ESLint 更注重质量规则",
+  "source": "@site/docs/skill/code-specification/prettier.md",
+  "sourceDirName": "skill/code-specification",
+  "slug": "/prettier",
+  "permalink": "/baikaishui-blog/docs/prettier",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "prettier",
+    "slug": "/prettier",
+    "title": "prettier",
+    "authors": "baikaishui",
+    "keywords": [
+      "code-specification",
+      "prettier"
+    ]
+  },
+  "sidebar": "skill",
+  "previous": {
+    "title": "eslint",
+    "permalink": "/baikaishui-blog/docs/eslint"
+  },
+  "next": {
+    "title": "stylelint",
+    "permalink": "/baikaishui-blog/docs/stylelint"
+  }
+}

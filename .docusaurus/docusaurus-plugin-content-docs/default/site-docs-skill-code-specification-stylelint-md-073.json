@@ -1,0 +1,32 @@
+{
+  "id": "skill/code-specification/stylelint",
+  "title": "stylelint",
+  "description": "StyleLint 作为一个样式表的静态分析工具，可以帮助发现和纠正样式表中的问题，提高项目的代码质量和规范。",
+  "source": "@site/docs/skill/code-specification/stylelint.md",
+  "sourceDirName": "skill/code-specification",
+  "slug": "/stylelint",
+  "permalink": "/baikaishui-blog/docs/stylelint",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "stylelint",
+    "slug": "/stylelint",
+    "title": "stylelint",
+    "authors": "baikaishui",
+    "keywords": [
+      "code-specification",
+      "stylelint"
+    ]
+  },
+  "sidebar": "skill",
+  "previous": {
+    "title": "prettier",
+    "permalink": "/baikaishui-blog/docs/prettier"
+  },
+  "next": {
+    "title": "vscode配置",
+    "permalink": "/baikaishui-blog/docs/vscode"
+  }
+}

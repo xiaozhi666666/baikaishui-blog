@@ -1,0 +1,32 @@
+{
+  "id": "skill/code-specification/eslint",
+  "title": "eslint",
+  "description": "1. TypeScript 的代码检查工具主要有 TSLint 和 ESLint 两种",
+  "source": "@site/docs/skill/code-specification/eslint.md",
+  "sourceDirName": "skill/code-specification",
+  "slug": "/eslint",
+  "permalink": "/baikaishui-blog/docs/eslint",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "eslint",
+    "slug": "/eslint",
+    "title": "eslint",
+    "authors": "baikaishui",
+    "keywords": [
+      "code-specification",
+      "eslint"
+    ]
+  },
+  "sidebar": "skill",
+  "previous": {
+    "title": "代码规范",
+    "permalink": "/baikaishui-blog/docs/code-specification"
+  },
+  "next": {
+    "title": "prettier",
+    "permalink": "/baikaishui-blog/docs/prettier"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "skill/code-specification/husky",
+  "title": "husky+lint-staged",
+  "description": "Locale Dropdown",
+  "source": "@site/docs/skill/code-specification/husky.md",
+  "sourceDirName": "skill/code-specification",
+  "slug": "/husky",
+  "permalink": "/baikaishui-blog/docs/husky",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "husky",
+    "slug": "/husky",
+    "title": "husky+lint-staged",
+    "authors": "baikaishui",
+    "keywords": [
+      "code-style",
+      "husky"
+    ]
+  },
+  "sidebar": "skill",
+  "previous": {
+    "title": "vscode配置",
+    "permalink": "/baikaishui-blog/docs/vscode"
+  },
+  "next": {
+    "title": "webpack",
+    "permalink": "/baikaishui-blog/docs/webpack"
+  }
+}

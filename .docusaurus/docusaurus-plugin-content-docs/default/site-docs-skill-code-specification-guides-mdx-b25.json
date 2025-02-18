@@ -1,0 +1,31 @@
+{
+  "id": "skill/code-specification/code-specification-guides",
+  "title": "代码规范",
+  "description": "Locale Dropdown",
+  "source": "@site/docs/skill/code-specification/guides.mdx",
+  "sourceDirName": "skill/code-specification",
+  "slug": "/code-specification",
+  "permalink": "/baikaishui-blog/docs/code-specification",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "code-specification-guides",
+    "slug": "/code-specification",
+    "title": "代码规范",
+    "authors": "baikaishui",
+    "keywords": [
+      "code-specification"
+    ]
+  },
+  "sidebar": "skill",
+  "previous": {
+    "title": "技术笔记",
+    "permalink": "/baikaishui-blog/docs/skill"
+  },
+  "next": {
+    "title": "eslint",
+    "permalink": "/baikaishui-blog/docs/eslint"
+  }
+}

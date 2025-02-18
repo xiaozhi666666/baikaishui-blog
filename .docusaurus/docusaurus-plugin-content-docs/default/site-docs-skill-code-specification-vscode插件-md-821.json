@@ -1,0 +1,32 @@
+{
+  "id": "skill/code-specification/vscode",
+  "title": "vscode配置",
+  "description": "不想每次都运行 npm run lint 给我把 VS Code 插件都装好 ESLint，其他的 Prettier-Code-formatter、 Stylelint、Code Spell Checker 等",
+  "source": "@site/docs/skill/code-specification/vscode插件.md",
+  "sourceDirName": "skill/code-specification",
+  "slug": "/vscode",
+  "permalink": "/baikaishui-blog/docs/vscode",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "vscode",
+    "slug": "/vscode",
+    "title": "vscode配置",
+    "authors": "baikaishui",
+    "keywords": [
+      "code-specification",
+      "vscode"
+    ]
+  },
+  "sidebar": "skill",
+  "previous": {
+    "title": "stylelint",
+    "permalink": "/baikaishui-blog/docs/stylelint"
+  },
+  "next": {
+    "title": "husky+lint-staged",
+    "permalink": "/baikaishui-blog/docs/husky"
+  }
+}

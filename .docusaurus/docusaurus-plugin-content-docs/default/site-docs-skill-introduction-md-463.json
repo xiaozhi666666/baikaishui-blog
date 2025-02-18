@@ -1,0 +1,33 @@
+{
+  "id": "skill/introduction",
+  "title": "技术笔记",
+  "description": "本页面为个人学习中所涉及相关技术栈的笔记汇总，包含但不限于",
+  "source": "@site/docs/skill/introduction.md",
+  "sourceDirName": "skill",
+  "slug": "/skill",
+  "permalink": "/baikaishui-blog/docs/skill",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "introduction",
+    "slug": "/skill",
+    "title": "技术笔记",
+    "keywords": [
+      "前端",
+      "后端",
+      "Vue",
+      "React",
+      "Jquery",
+      "JavaScript",
+      "Typescript",
+      "node"
+    ]
+  },
+  "sidebar": "skill",
+  "next": {
+    "title": "代码规范",
+    "permalink": "/baikaishui-blog/docs/code-specification"
+  }
+}
