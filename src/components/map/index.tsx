@@ -65,6 +65,7 @@ const MapComp = () => {
           "四川省",
           "青海省",
           "甘肃省",
+          "湖南省",
         ];
 
         const districtSearch = new AMap.DistrictSearch({
